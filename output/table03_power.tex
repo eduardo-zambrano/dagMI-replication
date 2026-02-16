@@ -1,0 +1,19 @@
+\begin{tabular}{lccccc}
+\toprule
+& & \multicolumn{2}{c}{$N=500$} & \multicolumn{2}{c}{$N=1000$} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+True $\mathcal{G}_1$ & Tested $\mathcal{G}_0$ & MI & CI & MI & CI \\
+\midrule
+\multicolumn{6}{l}{\textit{Non-Markov equivalent:}} \\
+$X_1 \to X_2 \to X_3$ & $X_1 \to X_2 \leftarrow X_3$ & 0.00 & 0.04 & 0.00 & 0.12 \\
+$X_1 \to X_2, X_1 \to X_3$ & $X_1 \leftarrow X_2 \to X_3$ & 0.00 & 1.00 & 0.02 & 1.00 \\
+\midrule
+\multicolumn{6}{l}{\textit{Markov equivalent (CI test has no power):}} \\
+$X_1 \to X_2 \to X_3$ & $X_1 \leftarrow X_2 \to X_3$ & 0.00 & 0.05 & 0.00 & 0.05 \\
+$X_1 \to X_2 \to X_3$ & $X_1 \leftarrow X_2 \leftarrow X_3$ & 0.00 & 0.05 & 0.00 & 0.05 \\
+$X_1 \to X_2 \leftarrow X_3, X_1 \to X_3$ & $X_1 \leftarrow X_2 \to X_3, X_1 \to X_3$ & 0.00 & 0.05 & 0.00 & 0.05 \\
+Diamond: cascade & Diamond: hub & 0.00 & 0.05 & 0.22 & 0.05 \\
+4-chain & 4-fork & 0.24 & 0.05 & 0.84 & 0.05 \\
+5-var tree A & 5-var tree B & 0.00 & 0.05 & 0.00 & 0.05 \\
+\bottomrule
+\end{tabular}
