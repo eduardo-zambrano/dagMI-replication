@@ -10,8 +10,8 @@ matrix (Whole Blood samples).
 |--------|------|-----------------|
 | JAK2 | Janus kinase 2 | Upstream kinase |
 | STAT1 | Signal transducer and activator of transcription 1 | Transcription factor (hub) |
-| IRF1 | Interferon regulatory factor 1 | STAT1 target |
-| GBP1 | Guanylate-binding protein 1 | STAT1 target |
+| IRF1 | Interferon regulatory factor 1 | STAT1 target (hypothesized; see Assumption 1) |
+| GBP1 | Guanylate-binding protein 1 | STAT1 target (hypothesized; see Assumption 1) |
 
 - **Samples:** 755 Whole Blood donors
 - **Units:** log2(TPM + 1)

@@ -47,7 +47,7 @@ gene_data <- scale(gene_data)
 # --- Define competing DAGs (4 nodes: JAK2=1, STAT1=2, IRF1=3, GBP1=4) ---
 nodes <- c("JAK2", "STAT1", "IRF1", "GBP1")
 
-# Correct: JAK2 -> STAT1 -> IRF1, STAT1 -> GBP1 (STAT1 hub)
+# Hypothesized: JAK2 -> STAT1 -> IRF1, STAT1 -> GBP1 (STAT1 hub)
 A_correct <- matrix(0, 4, 4)
 A_correct[1, 2] <- 1  # JAK2 -> STAT1
 A_correct[2, 3] <- 1  # STAT1 -> IRF1
@@ -69,7 +69,7 @@ A_fork[1, 4] <- 1  # JAK2 -> GBP1
 g_fork <- dag(A_fork, nodes = nodes)
 
 # --- Test all three models ---
-cat("  Testing STAT1-hub (correct) model...\n")
+cat("  Testing STAT1-hub (hypothesized) model...\n")
 res_correct <- mi_test(gene_data, g_correct, B = B, ordering = "first",
                        verbose = FALSE, seed = 1)
 cat(sprintf("    STAT1 hub: T=%.3f, p=%.3f\n", res_correct$statistic, res_correct$p_value))
@@ -105,7 +105,7 @@ decision <- function(p, alpha = 0.05) {
 lines <- c(
   "Model & $\\hat{T}$ & $p$-value & Decision \\\\",
   "\\midrule",
-  sprintf("STAT1 hub (correct) & %s & %s & %s \\\\",
+  sprintf("STAT1 hub (hypothesized) & %s & %s & %s \\\\",
     format_num(res_correct$statistic, 2),
     format_num(res_correct$p_value, 3),
     decision(res_correct$p_value)),

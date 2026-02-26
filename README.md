@@ -89,7 +89,7 @@ Rscript run_all.R --quick
 Runs the entire pipeline with reduced simulation parameters (`n_sims =
 5`, `B = 30`) to verify that all scripts execute without error. Point
 estimates will be noisy but qualitative patterns should be consistent.
-Expected runtime: **~70 minutes**.
+Expected runtime: **~25 minutes**.
 
 ### Selective execution
 
@@ -243,6 +243,6 @@ If you use this replication package, please cite the paper:
   title={Testing Causal {DAG} Structures via Moment Inequalities},
   author={Zambrano, Eduardo},
   year={2026},
-  journal={Working paper}
+  journal={Under review}
 }
 ```

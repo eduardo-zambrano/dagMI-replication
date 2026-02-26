@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# Section 9.1: Returns to Schooling with IV (Angrist & Krueger 1991)
+# Section 9.1: Returns to Schooling with IV (Card 1995)
 # Output: output/section9_iv_results.tex (inline values for paper narrative)
 
 library(dagMI)
